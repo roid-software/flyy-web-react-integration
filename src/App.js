@@ -7,7 +7,8 @@ function App() {
     window.onload = function () {
       // const flyySDK = new FlyySDK();
       // flyySDK.startReferralTracking();
-      console.log(window.flyySdk,"<<<window.flySdk")
+      // console.log(window.flyySdk,"<<<window.flySdk")
+      window.flySdk.startReferralTracking();
     };
   }, []);
 
