@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
-
+import SignUp from "./components/SignUp"
+import React, { useEffect } from 'react';
 function App() {
+
+  useEffect(() => {
+    window.onload = function () {
+      // const flyySDK = new FlyySDK();
+      // flyySDK.startReferralTracking();
+      console.log(window.flyySdk,"<<<window.flySdk")
+    };
+  }, []);
+
+  // useEffect(() => {
+  //   const script = document.createElement('script');
+  //   script.src = 'https://cdn.theflyy.com/web-assets/flyy_sdk_package/v1.0.7/flyy-sdk.js';
+  //   script.async = true;
+  //   script.onload = () => {
+  //     const flyySDK = new FlyySDK();
+  //     flyySDK.startReferralTracking();
+  //   };
+  //   document.head.appendChild(script);
+  // }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <SignUp />
+    </>
   );
 }
 
