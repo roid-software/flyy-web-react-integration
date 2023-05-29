@@ -4,20 +4,20 @@ const SignUp = () => {
   const [userName, setUserName] = useState("");
   const headers = {
     "Content-Type": "application/json",
-    "Partner-Key": "PARTNER_SECRET_KEY",
+    "Partner-Key": "PUO89q5z6du2Ppb4nXymNr2kq7UbdorvssM2Cur1",
   };
 
   async function auth(data) {
     await axios
       .post(
-        `https://stage-partner-api.theflyy.com/v1/PARTNER_ID/user/${userName}/user_token`,
+        `https://stage-partner-api.theflyy.com/v1/8fce343fa6170bf1ecb5/user/${userName}/user_token`,
         data,
         { headers }
       )
       .then((res) => {
         var sdkdata = {
-          package_name: "com.app.stage",
-          partner_id: "PARTNER_ID",
+          package_name: "com.abhinav.stage",
+          partner_id: "8fce343fa6170bf1ecb5",
           ext_user_token: res.data.token,
           device_id: res.data.device_id,
           environment: "STAGE",
