@@ -15,26 +15,35 @@ const SignUp = () => {
                 ext_user_token: res.data.token,
                 device_id: res.data.device_id,
                 environment: "STAGE"
-        }
-        console.log(data1,"<<<data1")
+            }
+            console.log(data1, "<<<data1")
             // window.onload = function () {
             //     var flyySDK = new FlyySDK();
             //     flyySDK.initSDK(JSON.stringify(data1));
             // }
             window.flyySdk.initSDK(JSON.stringify(data1))
-          
+
         })
-}
-return (
-    <>
-        <input type='text' placeholder='Enter your username' onChange={(e) => {
-            setUserName(e.target.value)
-        }} />
-        <button onClick={() => {
-            auth({ "is_new": true, "username": userName })
-        }}> Start Fly SDK</button>
-    </>
-)
+    }
+    return (
+        <>
+            <div class="login-form-bd">
+                <div class="form-wrapper">
+                    <div class="form-container">
+                        <h1> Demo SDK</h1>
+                            <div class="form-control">
+                                <input type="text" required onChange={(e) => {
+                                    setUserName(e.target.value)
+                                }} placeholder='Enter your username' />
+                            </div>
+                            <button onClick={() => {
+                                auth({ "is_new": true, "username": userName })
+                            }} class="login-btn">Start Here</button>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
 }
 
 export default SignUp
